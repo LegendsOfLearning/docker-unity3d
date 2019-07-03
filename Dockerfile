@@ -1,10 +1,13 @@
 FROM wtanaka/xenial-uid
 
-ARG DOWNLOAD_URL=https://beta.unity3d.com/download/dad990bf2728/UnitySetup-2018.2.7f1
-ARG SHA1=13c24c5268a1a97e1e212321dc47a8890f0934ca
+# ARG DOWNLOAD_URL=https://beta.unity3d.com/download/dad990bf2728/UnitySetup-2018.2.7f1
+# ARG SHA1=13c24c5268a1a97e1e212321dc47a8890f0934ca
+
+ARG DOWNLOAD_URL=http://beta.unity3d.com/download/292b93d75a2c/LinuxEditorInstaller/Unity.tar.xz
+ARG SHA1=9cb7fbcdcbb162f306986b63a81bf07c8d956c5d
 
 RUN apt-get update -qq; \
-    apt-get install -qq -y \
+    DEBIAN_FRONTEND=noninteractive apt-get install -qq -y \
     ffmpeg \
     gconf-service \
     lib32gcc1 \
