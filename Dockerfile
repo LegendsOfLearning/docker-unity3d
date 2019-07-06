@@ -1,10 +1,10 @@
-FROM wtanaka/xenial-uid
+FROM hosh/ubuntu-uid:18.04
 
 # ARG DOWNLOAD_URL=https://beta.unity3d.com/download/dad990bf2728/UnitySetup-2018.2.7f1
 # ARG SHA1=13c24c5268a1a97e1e212321dc47a8890f0934ca
 
-ARG DOWNLOAD_URL=http://beta.unity3d.com/download/292b93d75a2c/LinuxEditorInstaller/Unity.tar.xz
-ARG SHA1=9cb7fbcdcbb162f306986b63a81bf07c8d956c5d
+ARG DOWNLOAD_URL=https://beta.unity3d.com/download/292b93d75a2c/UnitySetup-2019.1.0f2
+ARG SHA1=56711ddafdde2554a7782c846785767e07ebdc5d
 
 RUN apt-get update -qq; \
     DEBIAN_FRONTEND=noninteractive apt-get install -qq -y \
@@ -95,8 +95,5 @@ RUN wget -nv ${DOWNLOAD_URL} -O UnitySetup; \
     mkdir -p $HOME/.local/share/unity3d/Certificates/
 
 ADD CACerts.pem $HOME/.local/share/unity3d/Certificates/
-ADD combined_entry.sh /
-ADD write_license_file.sh /
-ADD xvfb_build.sh /
-ADD xvfb_runtests.sh /
+ADD combined_entry.sh use_license_file.sh xvfb_build.sh xvfb_runtests.sh /
 ENTRYPOINT ["/combined_entry.sh"]
