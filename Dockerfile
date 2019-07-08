@@ -95,5 +95,5 @@ RUN wget -nv ${DOWNLOAD_URL} -O UnitySetup; \
     mkdir -p $HOME/.local/share/unity3d/Certificates/
 
 ADD CACerts.pem $HOME/.local/share/unity3d/Certificates/
-ADD combined_entry.sh write_license_file.sh xvfb_build.sh xvfb_runtests.sh /
+ADD combined_entry.sh write_license_file.sh build_target.sh xvfb_runtests.sh /
 ENTRYPOINT ["/combined_entry.sh"]
