@@ -8,8 +8,9 @@ set -x
 export BUILD_PATH=./Builds/$BUILD_TARGET/
 mkdir -p $BUILD_PATH
 
+# -projectPath ./ \
+
 /opt/Unity/Editor/Unity \
-    -projectPath $(pwd) \
     -batchmode \
     -nographics \
     -quit \
