@@ -14,6 +14,7 @@ mkdir -p $BUILD_PATH
     -batchmode \
     -nographics \
     -quit \
+    -projectPath $(pwd) \
     -buildTarget $BUILD_TARGET \
     -customBuildTarget $BUILD_TARGET \
     -customBuildName $BUILD_NAME \
