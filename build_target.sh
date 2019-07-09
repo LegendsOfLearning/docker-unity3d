@@ -9,12 +9,13 @@ export BUILD_PATH=./Builds/$BUILD_TARGET/
 mkdir -p $BUILD_PATH
 
 # -projectPath ./ \
+# -projectPath $(pwd) \
 
 /opt/Unity/Editor/Unity \
     -batchmode \
     -nographics \
+    -logFile - \
     -quit \
-    -projectPath $(pwd) \
     -buildTarget $BUILD_TARGET \
     -customBuildTarget $BUILD_TARGET \
     -customBuildName $BUILD_NAME \

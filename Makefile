@@ -1,6 +1,6 @@
 # Makefile for creating container file
 # Override these with environmental variables
-VERSION?=2019.1.0f2-lol-2
+VERSION?=2019.1.0f2-lol-3
 
 ### Do not override below
 
